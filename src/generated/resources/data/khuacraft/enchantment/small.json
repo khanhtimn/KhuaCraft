@@ -1,0 +1,54 @@
+{
+  "anvil_cost": 4,
+  "description": {
+    "translate": "enchantment.khuacraft.small"
+  },
+  "effects": {
+    "minecraft:location_changed": [
+      {
+        "effect": {
+          "type": "khuacraft:scale",
+          "attack_scale": {
+            "type": "minecraft:linear",
+            "base": 0.8,
+            "per_level_above_first": -0.1
+          },
+          "attack_speed_scale": {
+            "type": "minecraft:linear",
+            "base": 1.0,
+            "per_level_above_first": 0.1
+          },
+          "base_scale": {
+            "type": "minecraft:lookup",
+            "fallback": {
+              "type": "minecraft:linear",
+              "base": 0.6,
+              "per_level_above_first": -0.2
+            },
+            "values": [
+              0.5,
+              0.35,
+              0.2
+            ]
+          },
+          "movement_scale": 1.0
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#c:exclusive_set/helmets",
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "head"
+  ],
+  "supported_items": "#minecraft:enchantable/head_armor",
+  "weight": 3
+}

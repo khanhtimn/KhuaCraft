@@ -1,0 +1,86 @@
+{
+  "uno_reverse": {
+    "subtitle": "sounds.khuacraft.uno_reverse_use",
+    "sounds": [
+      "khuacraft:uno_reverse"
+    ]
+  },
+  "huy_ngoc_do": {
+    "subtitle": "sounds.khuacraft.huy_ngoc_do_singing",
+    "sounds": [
+      "khuacraft:huy_ngoc_do"
+    ]
+  },
+  "soi_ech_everynight": {
+    "subtitle": "sounds.khuacraft.soi_ech_everynight",
+    "sounds": [
+      "khuacraft:soi_ech_everynight"
+    ]
+  },
+  "free_fire": {
+    "subtitle": "sounds.khuacraft.free_fire",
+    "sounds": [
+      "khuacraft:free_fire"
+    ]
+  },
+  "het_suong_can_gio": {
+    "subtitle": "sounds.khuacraft.het_suong_can_gio",
+    "sounds": [
+      "khuacraft:het_suong_can_gio"
+    ]
+  },
+  "het_xang_can_so": {
+    "subtitle": "sounds.khuacraft.het_xang_can_so",
+    "sounds": [
+      "khuacraft:het_xang_can_so"
+    ]
+  },
+  "ai_cung_du_thua": {
+    "subtitle": "sounds.khuacraft.ai_cung_du_thua",
+    "sounds": [
+      "khuacraft:ai_cung_du_thua"
+    ]
+  },
+  "vinflow": {
+    "subtitle": "sounds.khuacraft.vinflow",
+    "sounds": [
+      "khuacraft:vinflow"
+    ]
+  },
+  "dang_long_bien": {
+    "subtitle": "sounds.khuacraft.dang_long_bien",
+    "sounds": [
+      "khuacraft:dang_long_bien"
+    ]
+  },
+  "quan_ao_2hand": {
+    "subtitle": "sounds.khuacraft.quan_ao_2hand",
+    "sounds": [
+      "khuacraft:quan_ao_2hand"
+    ]
+  },
+  "vit_quay_lang_song": {
+    "subtitle": "sounds.khuacraft.vit_quay_lang_song",
+    "sounds": [
+      "khuacraft:vit_quay_lang_song"
+    ]
+  },
+  "tsmt": {
+    "subtitle": "sounds.khuacraft.tsmt",
+    "sounds": [
+      "khuacraft:tsmt"
+    ]
+  },
+  "fart_reverb": {
+    "subtitle": "sounds.khuacraft.fart_reverb",
+    "sounds": [
+      "khuacraft:fart_reverb"
+    ]
+  },
+  "pho_tai": {
+    "subtitle": "sounds.khuacraft.pho_tai",
+    "sounds": [
+      "khuacraft:pho_tai"
+    ]
+  }
+}

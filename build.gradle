@@ -19,6 +19,15 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        url = "https://jitpack.io"
+    }
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 base {
@@ -45,6 +54,14 @@ neoForge {
     runs {
         client {
             client()
+
+            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        clientAuth {
+            client()
+            devLogin = true
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
@@ -133,6 +150,13 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    localRuntime "curse.maven:architectury-api-419699:5786327"
+    localRuntime "curse.maven:cloth-config-348521:5729127"
+    localRuntime "curse.maven:roughly-enough-items-310111:5846953"
+    localRuntime "curse.maven:jade-324717:6155158"
+
+    implementation "com.github.Virtuoel:Pehkui:${pehkui_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

@@ -1,0 +1,127 @@
+{
+  "khuacraft.title": "KhựaCraft",
+  "khuacraft.preview": "Địt mẹ súc vật Hoàng Em sửa lỗi mod đê: ",
+
+  "itemGroup.khuacraft.general": "Vật phẩm KhựaCraft",
+  "item.khuacraft.creative_tab_icon": "Vật phẩm KhựaCraft",
+  "item.khuacraft.uno_reverse": "Thẻ UNO© Reverse",
+
+  "enchantment.khuacraft.uno_reverse": "UNO© Reverse",
+  "enchantment.khuacraft.big": "Khổng lồ hoá",
+  "enchantment.khuacraft.small": "Nhỏ mà có võ",
+  "enchantment.khuacraft.disloyalty": "Lòng đéo trung thành",
+  "enchantment.khuacraft.swappiness_curse": "Băng trộm",
+  "enchantment.khuacraft.randomness": "Phế vật thành báu vật",
+  "enchantment.khuacraft.smelting_touch": "Tái hiện thánh quang",
+  "enchantment.khuacraft.combustion_curse": "Nóng tính",
+  "enchantment.khuacraft.inner_conscience": "420ent",
+  "enchantment.khuacraft.uno_reverse.desc": "Phản sát thương khi chặn bằng khiên",
+  "enchantment.khuacraft.big.desc": "Hoá to khi mặc mũ có cường hoá này",
+  "enchantment.khuacraft.small.desc": "Hoá nhỏ khi mặc mũ có cường hoá này",
+  "enchantment.khuacraft.disloyalty.desc": "Trident khi bay về sẽ gây sát thương cho chủ nhân",
+  "enchantment.khuacraft.swappiness_curse.desc": "Ngẫu nhiên đổi vật phẩm với kẻ địch khi tấn công",
+  "enchantment.khuacraft.randomness.desc": "Tỉ lệ rớt vật phẩm ngẫu nhiên mỗi khi đập khối",
+  "enchantment.khuacraft.smelting_touch.desc": "Tự động nung khối đã đào",
+  "enchantment.khuacraft.combustion_curse.desc": "Tự nhiên nổ mẹ luôn",
+
+  "sounds.khuacraft.uno_reverse_use": "Ai đó bị UNO© Reverse",
+  "sounds.khuacraft.huy_ngoc_do_singing": "Huỹ Ngọc Đô đang hát",
+  "sounds.khuacraft.soi_ech_everynight": "Soi ếch e rì nai ai ài ồ ái ai ài",
+  "sounds.khuacraft.free_fire": "Máy chú có Free Fire© hog?",
+  "sounds.khuacraft.het_xuong_can_gio": "Chẳng cần một ai nữa",
+  "sounds.khuacraft.het_xang_can_so": "Một mình anh đứng dưới mưa",
+  "sounds.khuacraft.ai_cung_du_thua": "Bất kể ai cũng dư thừa",
+  "sounds.khuacraft.vinflow": "Vinflow",
+  "sounds.khuacraft.dang_long_bien": "Nhận ra mình đang ở quận Ba Đình",
+  "sounds.khuacraft.quan_ao_2hand": "Bật chế độ bay lên bay lên quần áo 2hand",
+  "sounds.khuacraft.vit_quay_lang_son": "Mịt mù Vịt quay Lạng Sơn",
+  "sounds.khuacraft.tsmt": "TSMT",
+  "sounds.khuacraft.fart_reverb": "ඞ",
+  "sounds.khuacraft.pho_tai": "Phở tái",
+
+  "effect.khuacraft.big": "To lòi",
+  "effect.khuacraft.small": "Bé tý",
+  "effect.khuacraft.fat": "Béo phì",
+  "effect.khuacraft.thin": "Gầy gộc",
+  "item.minecraft.potion.effect.big_potion": "Thuốc To Lòi",
+  "item.minecraft.splash_potion.effect.big_potion": "Thuốc To Lòi có thể ném được",
+  "item.minecraft.lingering_potion.effect.big_potion": "Thuốc To Lòi kéo dài",
+  "item.minecraft.tipped_arrow.effect.big_potion": "Mũi Tên Được Phủ To Lòi",
+
+  "item.minecraft.potion.effect.strong_big_potion": "Thuốc To Lòi Mạnh",
+  "item.minecraft.splash_potion.effect.strong_big_potion": "Thuốc To Lòi Mạnh có thể ném được",
+  "item.minecraft.lingering_potion.effect.strong_big_potion": "Thuốc To Lòi Mạnh kéo dài",
+  "item.minecraft.tipped_arrow.effect.strong_big_potion": "Mũi Tên Được Phủ To Lòi Mạnh",
+
+  "item.minecraft.potion.effect.long_big_potion": "Thuốc To Lòi Dài",
+  "item.minecraft.splash_potion.effect.long_big_potion": "Thuốc To Lòi Dài có thể ném được",
+  "item.minecraft.lingering_potion.effect.long_big_potion": "Thuốc To Lòi Dài kéo dài",
+  "item.minecraft.tipped_arrow.effect.long_big_potion": "Mũi Tên Được Phủ To Lòi Dài",
+
+  "item.minecraft.potion.effect.strong_long_big_potion": "Thuốc To Lòi Dài Mạnh",
+  "item.minecraft.splash_potion.effect.strong_long_big_potion": "Thuốc To Lòi Dài Mạnh có thể ném được",
+  "item.minecraft.lingering_potion.effect.strong_long_big_potion": "Thuốc To Lòi Dài Mạnh kéo dài",
+  "item.minecraft.tipped_arrow.effect.strong_long_big_potion": "Mũi Tên Được Phủ To Lòi Dài Mạnh",
+
+  "item.minecraft.potion.effect.small_potion": "Thuốc Bé Tý",
+  "item.minecraft.splash_potion.effect.small_potion": "Thuốc Bé Tý có thể ném được",
+  "item.minecraft.lingering_potion.effect.small_potion": "Thuốc Bé Tý kéo dài",
+  "item.minecraft.tipped_arrow.effect.small_potion": "Mũi Tên Được Phủ Bé Tý",
+
+  "item.minecraft.potion.effect.strong_small_potion": "Thuốc Bé Tý Mạnh",
+  "item.minecraft.splash_potion.effect.strong_small_potion": "Thuốc Bé Tý Mạnh có thể ném được",
+  "item.minecraft.lingering_potion.effect.strong_small_potion": "Thuốc Bé Tý Mạnh kéo dài",
+  "item.minecraft.tipped_arrow.effect.strong_small_potion": "Mũi Tên Được Phủ Bé Tý Mạnh",
+
+  "item.minecraft.potion.effect.long_small_potion": "Thuốc Bé Tý Dài",
+  "item.minecraft.splash_potion.effect.long_small_potion": "Thuốc Bé Tý Dài có thể ném được",
+  "item.minecraft.lingering_potion.effect.long_small_potion": "Thuốc Bé Tý Dài kéo dài",
+  "item.minecraft.tipped_arrow.effect.long_small_potion": "Mũi Tên Được Phủ Bé Tý Dài",
+
+  "item.minecraft.potion.effect.strong_long_small_potion": "Thuốc Bé Tý Dài Mạnh",
+  "item.minecraft.splash_potion.effect.strong_long_small_potion": "Thuốc Bé Tý Dài Mạnh có thể ném được",
+  "item.minecraft.lingering_potion.effect.strong_long_small_potion": "Thuốc Bé Tý Dài Mạnh kéo dài",
+  "item.minecraft.tipped_arrow.effect.strong_long_small_potion": "Mũi Tên Được Phủ Bé Tý Dài Mạnh",
+
+  "item.minecraft.potion.effect.fat_potion": "Thuốc Béo Phì",
+  "item.minecraft.splash_potion.effect.fat_potion": "Thuốc Béo Phì có thể ném được",
+  "item.minecraft.lingering_potion.effect.fat_potion": "Thuốc Béo Phì kéo dài",
+  "item.minecraft.tipped_arrow.effect.fat_potion": "Mũi Tên Được Phủ Béo Phì",
+
+  "item.minecraft.potion.effect.strong_fat_potion": "Thuốc Béo Phì Mạnh",
+  "item.minecraft.splash_potion.effect.strong_fat_potion": "Thuốc Béo Phì Mạnh có thể ném được",
+  "item.minecraft.lingering_potion.effect.strong_fat_potion": "Thuốc Béo Phì Mạnh kéo dài",
+  "item.minecraft.tipped_arrow.effect.strong_fat_potion": "Mũi Tên Được Phủ Béo Phì Mạnh",
+
+  "item.minecraft.potion.effect.long_fat_potion": "Thuốc Béo Phì Dài",
+  "item.minecraft.splash_potion.effect.long_fat_potion": "Thuốc Béo Phì Dài có thể ném được",
+  "item.minecraft.lingering_potion.effect.long_fat_potion": "Thuốc Béo Phì Dài kéo dài",
+  "item.minecraft.tipped_arrow.effect.long_fat_potion": "Mũi Tên Được Phủ Béo Phì Dài",
+
+  "item.minecraft.potion.effect.strong_long_fat_potion": "Thuốc Béo Phì Dài Mạnh",
+  "item.minecraft.splash_potion.effect.strong_long_fat_potion": "Thuốc Béo Phì Dài Mạnh có thể ném được",
+  "item.minecraft.lingering_potion.effect.strong_long_fat_potion": "Thuốc Béo Phì Dài Mạnh kéo dài",
+  "item.minecraft.tipped_arrow.effect.strong_long_fat_potion": "Mũi Tên Được Phủ Béo Phì Dài Mạnh",
+
+  "item.minecraft.potion.effect.thin_potion": "Thuốc Gầy Gộc",
+  "item.minecraft.splash_potion.effect.thin_potion": "Thuốc Gầy Gộc có thể ném được",
+  "item.minecraft.lingering_potion.effect.thin_potion": "Thuốc Gầy Gộc kéo dài",
+  "item.minecraft.tipped_arrow.effect.thin_potion": "Mũi Tên Được Phủ Gầy Gộc",
+
+  "item.minecraft.potion.effect.strong_thin_potion": "Thuốc Gầy Gộc Mạnh",
+  "item.minecraft.splash_potion.effect.strong_thin_potion": "Thuốc Gầy Gộc Mạnh có thể ném được",
+  "item.minecraft.lingering_potion.effect.strong_thin_potion": "Thuốc Gầy Gộc Mạnh kéo dài",
+  "item.minecraft.tipped_arrow.effect.strong_thin_potion": "Mũi Tên Được Phủ Gầy Gộc Mạnh",
+
+  "item.minecraft.potion.effect.long_thin_potion": "Thuốc Gầy Gộc Dài",
+  "item.minecraft.splash_potion.effect.long_thin_potion": "Thuốc Gầy Gộc Dài có thể ném được",
+  "item.minecraft.lingering_potion.effect.long_thin_potion": "Thuốc Gầy Gộc Dài kéo dài",
+  "item.minecraft.tipped_arrow.effect.long_thin_potion": "Mũi Tên Được Phủ Gầy Gộc Dài",
+
+  "item.minecraft.potion.effect.strong_long_thin_potion": "Thuốc Gầy Gộc Dài Mạnh",
+  "item.minecraft.splash_potion.effect.strong_long_thin_potion": "Thuốc Gầy Gộc Dài Mạnh có thể ném được",
+  "item.minecraft.lingering_potion.effect.strong_long_thin_potion": "Thuốc Gầy Gộc Dài Mạnh kéo dài",
+  "item.minecraft.tipped_arrow.effect.strong_long_thin_potion": "Mũi Tên Được Phủ Gầy Gộc Dài Mạnh"
+
+
+}
