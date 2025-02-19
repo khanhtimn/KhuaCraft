@@ -9,10 +9,8 @@ import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.minecraft.world.item.enchantment.effects.EnchantmentLocationBasedEffect;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import store.teamti.KhuaCraft;
 import store.teamti.util.ModScales;
-import virtuoel.pehkui.api.ScaleData;
-
-import java.util.List;
 
 public record ScaleEnchantmentEffect(
         LevelBasedValue baseScale,
@@ -39,55 +37,18 @@ public record ScaleEnchantmentEffect(
             @NotNull Vec3 vec3,
             boolean b
     ) {
-        ScaleData baseData = ModScales.BASE.getScaleData(entity);
-        ScaleData movementData = ModScales.MOVEMENT.getScaleData(entity);
-        ScaleData attackData = ModScales.ATTACK.getScaleData(entity);
-        ScaleData attackSpeedData = ModScales.ATTACK_SPEED.getScaleData(entity);
-
-        baseData.setTargetScale(baseScale.calculate(enchantmentLevel));
-        baseData.setScaleTickDelay(baseData.getScaleTickDelay());
-
-        movementData.setTargetScale(movementScale.calculate(enchantmentLevel));
-        movementData.setScaleTickDelay(movementData.getScaleTickDelay());
-
-        attackData.setTargetScale(attackScale.calculate(enchantmentLevel));
-        attackData.setScaleTickDelay(attackData.getScaleTickDelay());
-
-        attackSpeedData.setTargetScale(attackSpeedScale.calculate(enchantmentLevel));
-        attackSpeedData.setScaleTickDelay(attackSpeedData.getScaleTickDelay());
+        KhuaCraft.LOGGER.info("changed scale");
+        ModScales.changeScale(enchantmentLevel, entity, baseScale, movementScale, attackScale, attackSpeedScale);
     }
 
     @Override
     public void onDeactivated(@NotNull EnchantedItemInUse item, @NotNull Entity entity, @NotNull Vec3 pos, int enchantmentLevel) {
-        List.of(
-                ModScales.BASE.getScaleData(entity),
-                ModScales.MOVEMENT.getScaleData(entity),
-                ModScales.ATTACK.getScaleData(entity),
-                ModScales.ATTACK_SPEED.getScaleData(entity)
-        ).forEach(scaleData -> {
-            scaleData.setTargetScale(1.0F);
-            scaleData.setScaleTickDelay(scaleData.getScaleTickDelay());
-        });
+        KhuaCraft.LOGGER.info("resetted scale");
+        ModScales.resetScale(entity);
     }
 
     @Override
-    public @NotNull MapCodec<? extends EnchantmentLocationBasedEffect> codec() {
+    public @NotNull MapCodec<ScaleEnchantmentEffect> codec() {
         return CODEC;
-    }
-
-    public LevelBasedValue baseScale() {
-        return this.baseScale;
-    }
-
-    public LevelBasedValue movementScale() {
-        return this.movementScale;
-    }
-
-    public LevelBasedValue attackScale() {
-        return this.attackScale;
-    }
-
-    public LevelBasedValue attackSpeedScale() {
-        return this.attackSpeedScale;
     }
 }

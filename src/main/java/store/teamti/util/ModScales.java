@@ -1,8 +1,13 @@
 package store.teamti.util;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.enchantment.LevelBasedValue;
+import org.jetbrains.annotations.NotNull;
 import store.teamti.KhuaCraft;
 import virtuoel.pehkui.api.*;
+
+import java.util.List;
 
 public class ModScales {
 
@@ -45,5 +50,42 @@ public class ModScales {
         ScaleTypes.ATTACK_SPEED.getDefaultBaseValueModifiers().add(ATTACK_SPEED_MODIFIER);
 
         ScaleTypes.WIDTH.getDefaultBaseValueModifiers().add(THICKNESS_MODIFIER);
+    }
+
+    public static void changeScale(
+            int enchantmentLevel, @NotNull Entity entity,
+            LevelBasedValue baseScale,
+            LevelBasedValue movementScale,
+            LevelBasedValue attackScale,
+            LevelBasedValue attackSpeedScale
+    ) {
+        ScaleData baseData = ModScales.BASE.getScaleData(entity);
+        ScaleData movementData = ModScales.MOVEMENT.getScaleData(entity);
+        ScaleData attackData = ModScales.ATTACK.getScaleData(entity);
+        ScaleData attackSpeedData = ModScales.ATTACK_SPEED.getScaleData(entity);
+
+        baseData.setTargetScale(baseScale.calculate(enchantmentLevel));
+        baseData.setScaleTickDelay(baseData.getScaleTickDelay());
+
+        movementData.setTargetScale(movementScale.calculate(enchantmentLevel));
+        movementData.setScaleTickDelay(movementData.getScaleTickDelay());
+
+        attackData.setTargetScale(attackScale.calculate(enchantmentLevel));
+        attackData.setScaleTickDelay(attackData.getScaleTickDelay());
+
+        attackSpeedData.setTargetScale(attackSpeedScale.calculate(enchantmentLevel));
+        attackSpeedData.setScaleTickDelay(attackSpeedData.getScaleTickDelay());
+    }
+
+    public static void resetScale(@NotNull Entity entity) {
+        List.of(
+                ModScales.BASE.getScaleData(entity),
+                ModScales.MOVEMENT.getScaleData(entity),
+                ModScales.ATTACK.getScaleData(entity),
+                ModScales.ATTACK_SPEED.getScaleData(entity)
+        ).forEach(scaleData -> {
+            scaleData.setTargetScale(1.0F);
+            scaleData.setScaleTickDelay(scaleData.getScaleTickDelay());
+        });
     }
 }

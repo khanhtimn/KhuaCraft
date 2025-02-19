@@ -22,35 +22,40 @@ public class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
 
-        this.tag(EnchantmentTags.NON_TREASURE)
-                .add(ModEnchantments.UNO_REVERSE);
+        this.tag(EnchantmentTags.NON_TREASURE).add(ModEnchantments.UNO_REVERSE);
 
-        this.tag(EnchantmentTags.TREASURE)
-                .add(ModEnchantments.BIG, ModEnchantments.SMALL);
+        this.tag(EnchantmentTags.TREASURE).add(ModEnchantments.BIG, ModEnchantments.SMALL);
 
-        this.tag(EnchantmentTags.CURSE)
-                .add(ModEnchantments.SWAPPINESS_CURSE, ModEnchantments.COMBUSTION_CURSE);
+        this.tag(EnchantmentTags.CURSE).add(
+                ModEnchantments.FAT_CURSE,
+                ModEnchantments.SWAPPINESS_CURSE,
+                ModEnchantments.COMBUSTION_CURSE,
+                ModEnchantments.INNER_CONSCIENCE_CURSE
+        );
 
-        this.tag(EnchantmentTags.ON_RANDOM_LOOT)
-                .add(
-                        ModEnchantments.BIG,
-                        ModEnchantments.SMALL,
-                        ModEnchantments.UNO_REVERSE,
-                        ModEnchantments.SWAPPINESS_CURSE,
-                        ModEnchantments.COMBUSTION_CURSE
-                );
+        this.tag(EnchantmentTags.ON_RANDOM_LOOT).add(
+                ModEnchantments.BIG,
+                ModEnchantments.SMALL,
+                ModEnchantments.UNO_REVERSE,
+                ModEnchantments.FAT_CURSE,
+                ModEnchantments.SWAPPINESS_CURSE,
+                ModEnchantments.COMBUSTION_CURSE,
+                ModEnchantments.INNER_CONSCIENCE_CURSE
+        );
 
-        this.tag(EnchantmentTags.ON_MOB_SPAWN_EQUIPMENT)
-                .add(
-                        ModEnchantments.BIG,
-                        ModEnchantments.SMALL,
-                        ModEnchantments.UNO_REVERSE,
-                        ModEnchantments.SWAPPINESS_CURSE,
-                        ModEnchantments.COMBUSTION_CURSE
-                );
+        this.tag(EnchantmentTags.ON_MOB_SPAWN_EQUIPMENT).add(
+                ModEnchantments.BIG,
+                ModEnchantments.SMALL,
+                ModEnchantments.UNO_REVERSE,
+                ModEnchantments.FAT_CURSE,
+                ModEnchantments.SWAPPINESS_CURSE,
+                ModEnchantments.COMBUSTION_CURSE
+        );
 
-        this.tag(ModTags.Enchantments.HELMETS_EXCLUSIVE)
-                .add(ModEnchantments.BIG, ModEnchantments.SMALL);
+        this.tag(ModTags.Enchantments.HELMETS_EXCLUSIVE).add(
+                ModEnchantments.BIG,
+                ModEnchantments.SMALL
+        );
 
     }
 }

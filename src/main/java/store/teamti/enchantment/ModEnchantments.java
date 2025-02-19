@@ -20,12 +20,13 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCon
 import net.minecraft.world.level.storage.loot.providers.number.EnchantmentLevelProvider;
 import net.minecraft.world.phys.Vec3;
 import store.teamti.KhuaCraft;
-import store.teamti.enchantment.impl.ScaleEnchantmentEffect;
+import store.teamti.effect.ModEffects;
+import store.teamti.enchantment.impl.InnerConscienceEnchantmentEffect;
+import store.teamti.enchantment.impl.ApplyMobEffect;
 import store.teamti.enchantment.impl.SwappinessEnchantmentEffect;
 import store.teamti.sound.ModSounds;
 import store.teamti.util.ModTags;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -46,14 +47,20 @@ public class ModEnchantments {
     public static final ResourceKey<Enchantment> COMBUSTION_CURSE = ResourceKey.create(Registries.ENCHANTMENT,
             ResourceLocation.fromNamespaceAndPath(KhuaCraft.MOD_ID, "combustion_curse"));
 
+    public static final ResourceKey<Enchantment> INNER_CONSCIENCE_CURSE = ResourceKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(KhuaCraft.MOD_ID, "inner_conscience_curse"));
+
+    public static final ResourceKey<Enchantment> FAT_CURSE = ResourceKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(KhuaCraft.MOD_ID, "fat_curse"));
+
+
     public static void bootstrap(BootstrapContext<Enchantment> context) {
         var enchantments = context.lookup(Registries.ENCHANTMENT);
         var items = context.lookup(Registries.ITEM);
         var blocks = context.lookup(Registries.BLOCK);
 
         register(context, ModEnchantments.UNO_REVERSE, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ModTags.Items.SHIELD_ENCHANTABLE),
-                        items.getOrThrow(ModTags.Items.SHIELDS),
+                items.getOrThrow(ModTags.Items.SHIELD_ENCHANTABLE), items.getOrThrow(ModTags.Items.SHIELDS),
                         4,
                         3,
                         Enchantment.dynamicCost(10, 10),
@@ -64,7 +71,7 @@ public class ModEnchantments {
         );
 
         register(context, ModEnchantments.BIG, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
+                items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
                         3,
                         3,
                         Enchantment.dynamicCost(10, 10),
@@ -74,17 +81,12 @@ public class ModEnchantments {
                 .exclusiveWith(enchantments.getOrThrow(ModTags.Enchantments.HELMETS_EXCLUSIVE))
                 .withEffect(
                         EnchantmentEffectComponents.LOCATION_CHANGED,
-                        new ScaleEnchantmentEffect(
-                                LevelBasedValue.perLevel(1.5F, 0.25F),
-                                LevelBasedValue.lookup(List.of(0.625F, 0.5F, 0.45F), LevelBasedValue.perLevel(0.6F, -0.1F)),
-                                LevelBasedValue.lookup(List.of(1.1F, 1.25F, 1.5F), LevelBasedValue.perLevel(1.0F, 0.25F)),
-                                LevelBasedValue.perLevel(0.7F, -0.1F)
-                        )
+                        new ApplyMobEffect(ModEffects.BIG_EFFECT)
                 )
         );
 
         register(context, ModEnchantments.SMALL, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
+                items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
                         3,
                         3,
                         Enchantment.dynamicCost(10, 10),
@@ -94,17 +96,26 @@ public class ModEnchantments {
                 .exclusiveWith(enchantments.getOrThrow(ModTags.Enchantments.HELMETS_EXCLUSIVE))
                 .withEffect(
                         EnchantmentEffectComponents.LOCATION_CHANGED,
-                        new ScaleEnchantmentEffect(
-                                LevelBasedValue.lookup(List.of(0.5F, 0.35F, 0.2F), LevelBasedValue.perLevel(0.6F, -0.2F)),
-                                LevelBasedValue.constant(1.0F),
-                                LevelBasedValue.perLevel(0.8F, -0.1F),
-                                LevelBasedValue.perLevel(1.0F, 0.1F)
-                        )
+                        new ApplyMobEffect(ModEffects.SMALL_EFFECT)
+                )
+        );
+
+        register(context, ModEnchantments.FAT_CURSE, Enchantment.enchantment(Enchantment.definition(
+                        items.getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
+                        1,
+                        3,
+                        Enchantment.constantCost(25),
+                        Enchantment.constantCost(50),
+                        8,
+                        EquipmentSlotGroup.CHEST))
+                .withEffect(
+                        EnchantmentEffectComponents.LOCATION_CHANGED,
+                        new ApplyMobEffect(ModEffects.FAT_EFFECT)
                 )
         );
 
         register(context, ModEnchantments.SWAPPINESS_CURSE, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
+                items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
                         1,
                         3,
                         Enchantment.constantCost(25),
@@ -127,7 +138,7 @@ public class ModEnchantments {
         );
 
         register(context, ModEnchantments.COMBUSTION_CURSE, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
+                items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
                         1,
                         3,
                         Enchantment.constantCost(25),
@@ -158,10 +169,25 @@ public class ModEnchantments {
                 )
         );
 
+        register(context, ModEnchantments.INNER_CONSCIENCE_CURSE, Enchantment.enchantment(Enchantment.definition(
+                items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
+                        1,
+                        10,
+                        Enchantment.constantCost(25),
+                        Enchantment.constantCost(50),
+                        8,
+                        EquipmentSlotGroup.HEAD))
+                .withEffect(
+                        EnchantmentEffectComponents.TICK,
+                        new InnerConscienceEnchantmentEffect(),
+                        LootItemRandomChanceCondition.randomChance(EnchantmentLevelProvider.forEnchantmentLevel(LevelBasedValue.perLevel(0.001F)))
+                )
+        );
+
+
     }
 
-    private static void register(BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key,
-                                 Enchantment.Builder builder) {
+    private static void register(BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key, Enchantment.Builder builder) {
         registry.register(key, builder.build(key.location()));
     }
 }

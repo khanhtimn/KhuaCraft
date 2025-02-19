@@ -1,5 +1,6 @@
 package store.teamti.enchantment.impl;
 
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -8,8 +9,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import store.teamti.enchantment.ModEnchantments;
-import store.teamti.item.ModItems;
-import store.teamti.network.impl.UnoReverseAnimationPayload;
+import store.teamti.network.impl.payload.ClientboundUnoReverseAnimationPacket;
 
 public class UnoReverseEnchantmentEffect {
     public static void handleUnoReverse(final LivingIncomingDamageEvent event) {
@@ -40,11 +40,8 @@ public class UnoReverseEnchantmentEffect {
         double knockbackStrength = 0.5;
         Vec3 knockbackVector = attacker.position().subtract(defender.position()).normalize().scale(knockbackStrength);
         attacker.push(knockbackVector.x, 0.1, knockbackVector.z);
-        PacketDistributor.sendToPlayersTrackingEntityAndSelf(
-                attacker,
-                new UnoReverseAnimationPayload(
-                        attacker.getId(),
-                        new ItemStack(ModItems.UNO_REVERSE.get()))
-        );
+        if (attacker instanceof ServerPlayer serverPlayer) {
+            PacketDistributor.sendToPlayer(serverPlayer, new ClientboundUnoReverseAnimationPacket());
+        }
     }
 }

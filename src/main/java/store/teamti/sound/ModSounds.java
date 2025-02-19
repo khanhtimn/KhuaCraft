@@ -14,6 +14,8 @@ public class ModSounds {
 
     public static final Holder<SoundEvent> FART_REVERB = SOUND_EVENTS.register("fart_reverb", SoundEvent::createVariableRangeEvent);
 
+    public static final Holder<SoundEvent> INNER_CONSCIENCE = SOUND_EVENTS.register("inner_conscience", SoundEvent::createVariableRangeEvent);
+
     public static final Holder<SoundEvent> HUY_NGOC_DO = SOUND_EVENTS.register("huy_ngoc_do", SoundEvent::createVariableRangeEvent);
 
     public static final Holder<SoundEvent> SOI_ECH_EVERYNIGHT = SOUND_EVENTS.register("soi_ech_everynight", SoundEvent::createVariableRangeEvent);

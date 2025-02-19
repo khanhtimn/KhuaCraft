@@ -1,6 +1,8 @@
 {
   "values": [
+    "khuacraft:fat_curse",
     "khuacraft:swappiness_curse",
-    "khuacraft:combustion_curse"
+    "khuacraft:combustion_curse",
+    "khuacraft:inner_conscience_curse"
   ]
 }

@@ -7,31 +7,8 @@
     "minecraft:location_changed": [
       {
         "effect": {
-          "type": "khuacraft:scale",
-          "attack_scale": {
-            "type": "minecraft:linear",
-            "base": 0.8,
-            "per_level_above_first": -0.1
-          },
-          "attack_speed_scale": {
-            "type": "minecraft:linear",
-            "base": 1.0,
-            "per_level_above_first": 0.1
-          },
-          "base_scale": {
-            "type": "minecraft:lookup",
-            "fallback": {
-              "type": "minecraft:linear",
-              "base": 0.6,
-              "per_level_above_first": -0.2
-            },
-            "values": [
-              0.5,
-              0.35,
-              0.2
-            ]
-          },
-          "movement_scale": 1.0
+          "type": "khuacraft:apply_mob_effect",
+          "to_apply": "khuacraft:small"
         }
       }
     ]

@@ -5,82 +5,191 @@
       "khuacraft:uno_reverse"
     ]
   },
+  "inner_conscience": {
+    "subtitle": "sounds.khuacraft.inner_conscience",
+    "sounds": [
+      {
+        "name": "khuacraft:huy_ngoc_do",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:soi_ech_everynight",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:free_fire",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:het_suong_can_gio",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:het_xang_can_so",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:ai_cung_du_thua",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:vinflow",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:dang_long_bien",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:quan_ao_2hand",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:vit_quay_lang_song",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:tsmt",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:fart_reverb",
+        "type": "event",
+        "stream": "true"
+      },
+      {
+        "name": "khuacraft:pho_tai",
+        "type": "event",
+        "stream": "true"
+      }
+    ]
+  },
   "huy_ngoc_do": {
     "subtitle": "sounds.khuacraft.huy_ngoc_do_singing",
     "sounds": [
-      "khuacraft:huy_ngoc_do"
+      {
+        "name": "khuacraft:huy_ngoc_do",
+        "stream": "true"
+      }
     ]
   },
   "soi_ech_everynight": {
     "subtitle": "sounds.khuacraft.soi_ech_everynight",
     "sounds": [
-      "khuacraft:soi_ech_everynight"
+      {
+        "name": "khuacraft:soi_ech_everynight",
+        "stream": "true"
+      }
     ]
   },
   "free_fire": {
     "subtitle": "sounds.khuacraft.free_fire",
     "sounds": [
-      "khuacraft:free_fire"
+      {
+        "name": "khuacraft:free_fire",
+        "stream": "true"
+      }
     ]
   },
   "het_suong_can_gio": {
     "subtitle": "sounds.khuacraft.het_suong_can_gio",
     "sounds": [
-      "khuacraft:het_suong_can_gio"
+      {
+        "name": "khuacraft:het_suong_can_gio",
+        "stream": "true"
+      }
     ]
   },
   "het_xang_can_so": {
     "subtitle": "sounds.khuacraft.het_xang_can_so",
     "sounds": [
-      "khuacraft:het_xang_can_so"
+      {
+        "name": "khuacraft:het_xang_can_so",
+        "stream": "true"
+      }
     ]
   },
   "ai_cung_du_thua": {
     "subtitle": "sounds.khuacraft.ai_cung_du_thua",
     "sounds": [
-      "khuacraft:ai_cung_du_thua"
+      {
+        "name": "khuacraft:ai_cung_du_thua",
+        "stream": "true"
+      }
     ]
   },
   "vinflow": {
     "subtitle": "sounds.khuacraft.vinflow",
     "sounds": [
-      "khuacraft:vinflow"
+      {
+        "name": "khuacraft:vinflow",
+        "stream": "true"
+      }
     ]
   },
   "dang_long_bien": {
     "subtitle": "sounds.khuacraft.dang_long_bien",
     "sounds": [
-      "khuacraft:dang_long_bien"
+      {
+        "name": "khuacraft:dang_long_bien",
+        "stream": "true"
+      }
     ]
   },
   "quan_ao_2hand": {
     "subtitle": "sounds.khuacraft.quan_ao_2hand",
     "sounds": [
-      "khuacraft:quan_ao_2hand"
+      {
+        "name": "khuacraft:quan_ao_2hand",
+        "stream": "true"
+      }
     ]
   },
   "vit_quay_lang_song": {
     "subtitle": "sounds.khuacraft.vit_quay_lang_song",
     "sounds": [
-      "khuacraft:vit_quay_lang_song"
+      {
+        "name": "khuacraft:vit_quay_lang_song",
+        "stream": "true"
+      }
     ]
   },
   "tsmt": {
     "subtitle": "sounds.khuacraft.tsmt",
     "sounds": [
-      "khuacraft:tsmt"
+      {
+        "name": "khuacraft:tsmt",
+        "stream": "true"
+      }
     ]
   },
   "fart_reverb": {
     "subtitle": "sounds.khuacraft.fart_reverb",
     "sounds": [
-      "khuacraft:fart_reverb"
+      {
+        "name": "khuacraft:fart_reverb",
+        "stream": "true"
+      }
     ]
   },
   "pho_tai": {
     "subtitle": "sounds.khuacraft.pho_tai",
     "sounds": [
-      "khuacraft:pho_tai"
+      {
+        "name": "khuacraft:pho_tai",
+        "stream": "true"
+      }
     ]
   }
 }
