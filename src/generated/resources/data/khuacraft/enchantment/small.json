@@ -6,11 +6,40 @@
   "effects": {
     "khuacraft:equipment_scale": [
       {
-        "effect": {
-          "base_multiplier": 0.65,
-          "per_level_multiplier": -0.15,
-          "scale_type": "pehkui:base"
-        }
+        "multiplier": {
+          "type": "minecraft:lookup",
+          "fallback": {
+            "type": "minecraft:linear",
+            "base": 0.6,
+            "per_level_above_first": -0.2
+          },
+          "values": [
+            0.5,
+            0.35,
+            0.2
+          ]
+        },
+        "scale_type": "pehkui:base"
+      },
+      {
+        "multiplier": 1.0,
+        "scale_type": "pehkui:motion"
+      },
+      {
+        "multiplier": {
+          "type": "minecraft:linear",
+          "base": 0.8,
+          "per_level_above_first": -0.1
+        },
+        "scale_type": "pehkui:attack"
+      },
+      {
+        "multiplier": {
+          "type": "minecraft:linear",
+          "base": 1.0,
+          "per_level_above_first": 0.1
+        },
+        "scale_type": "pehkui:attack_speed"
       }
     ]
   },

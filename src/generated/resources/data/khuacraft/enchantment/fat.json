@@ -6,11 +6,28 @@
   "effects": {
     "khuacraft:equipment_scale": [
       {
-        "effect": {
-          "base_multiplier": 1.25,
-          "per_level_multiplier": 0.25,
-          "scale_type": "pehkui:width"
-        }
+        "multiplier": {
+          "type": "minecraft:linear",
+          "base": 1.5,
+          "per_level_above_first": 0.25
+        },
+        "scale_type": "pehkui:width"
+      },
+      {
+        "multiplier": {
+          "type": "minecraft:lookup",
+          "fallback": {
+            "type": "minecraft:linear",
+            "base": 0.8,
+            "per_level_above_first": -0.2
+          },
+          "values": [
+            0.8,
+            0.6,
+            0.5
+          ]
+        },
+        "scale_type": "pehkui:motion"
       }
     ]
   },

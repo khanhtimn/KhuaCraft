@@ -9,9 +9,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.ConditionalEffect;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import virtuoel.pehkui.api.ScaleData;
 import virtuoel.pehkui.api.ScaleRegistries;
@@ -23,19 +23,17 @@ import java.util.Set;
 
 public record ScaleEnchantmentEffect(
         ResourceLocation scaleType,
-        float baseMultiplier,
-        float perLevelMultiplier
+        LevelBasedValue multiplier
 ) {
     public static final Codec<ScaleEnchantmentEffect> CODEC = RecordCodecBuilder.create(instance ->
             instance.group(
                     ResourceLocation.CODEC.fieldOf("scale_type").forGetter(ScaleEnchantmentEffect::scaleType),
-                    Codec.FLOAT.fieldOf("base_multiplier").forGetter(ScaleEnchantmentEffect::baseMultiplier),
-                    Codec.FLOAT.optionalFieldOf("per_level_multiplier", 0.0F).forGetter(ScaleEnchantmentEffect::perLevelMultiplier)
+                    LevelBasedValue.CODEC.fieldOf("multiplier").forGetter(ScaleEnchantmentEffect::multiplier)
             ).apply(instance, ScaleEnchantmentEffect::new)
     );
 
     public float calculateMultiplier(int enchantmentLevel) {
-        return baseMultiplier + (perLevelMultiplier * enchantmentLevel);
+        return multiplier.calculate(enchantmentLevel);
     }
 
     public static class Listener {
@@ -79,13 +77,10 @@ public record ScaleEnchantmentEffect(
                 Enchantment enchantment = enchantmentHolder.value();
 
                 // Check if this enchantment has our custom EQUIPMENT_SCALE component
-                List<ConditionalEffect<ScaleEnchantmentEffect>> effects = enchantment.effects().get(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get());
+                List<ScaleEnchantmentEffect> effects = enchantment.effects().get(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get());
 
                 if (effects != null && !effects.isEmpty()) {
-                    for (ConditionalEffect<ScaleEnchantmentEffect> conditionalEffect : effects) {
-                        // Unwrap the effect from ConditionalEffect
-                        ScaleEnchantmentEffect effect = conditionalEffect.effect();
-
+                    for (ScaleEnchantmentEffect effect : effects) {
                         ResourceLocation scaleType = effect.scaleType();
                         affectedScaleTypes.add(scaleType);
 

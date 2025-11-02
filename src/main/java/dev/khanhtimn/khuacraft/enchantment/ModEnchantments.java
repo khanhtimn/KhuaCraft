@@ -9,9 +9,12 @@ import dev.khanhtimn.khuacraft.item.ModTags;
 import dev.khanhtimn.khuacraft.sound.ModSounds;
 import net.minecraft.advancements.critereon.DamageSourcePredicate;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -35,6 +38,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCon
 import net.minecraft.world.level.storage.loot.providers.number.EnchantmentLevelProvider;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -59,70 +63,122 @@ public class ModEnchantments {
 
     private static final ResourceLocation PEHKUI_BASE = ResourceLocation.fromNamespaceAndPath("pehkui", "base");
     private static final ResourceLocation PEHKUI_WIDTH = ResourceLocation.fromNamespaceAndPath("pehkui", "width");
+    private static final ResourceLocation PEHKUI_MOTION = ResourceLocation.fromNamespaceAndPath("pehkui", "motion");
+    private static final ResourceLocation PEHKUI_ATTACK = ResourceLocation.fromNamespaceAndPath("pehkui", "attack");
+    private static final ResourceLocation PEHKUI_ATTACK_SPEED = ResourceLocation.fromNamespaceAndPath("pehkui", "attack_speed");
 
     public static void bootstrap(BootstrapContext<Enchantment> context) {
         HolderGetter<Enchantment> enchantments = context.lookup(Registries.ENCHANTMENT);
         HolderGetter<Item> items = context.lookup(Registries.ITEM);
         HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
 
-        // BIG enchantment - increases base scale (for helmets)
-        // base: 1.25, perLevel: 0.25 → levels: 1.5x, 1.75x, 2.0x
-        register(context, BIG, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
-                        3,  // weight
-                        3,  // max level
-                        Enchantment.dynamicCost(10, 10),
-                        Enchantment.dynamicCost(25, 10),
-                        4,  // anvil cost
-                        EquipmentSlotGroup.HEAD))
-                .exclusiveWith(enchantments.getOrThrow(ModTags.Enchantments.HELMETS_EXCLUSIVE))
-                .withEffect(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get(),
-                        new ScaleEnchantmentEffect(PEHKUI_BASE, 1.25F, 0.25F))
+        context.register(
+                BIG,
+                new Enchantment(
+                        Component.translatable("enchantment.khuacraft.big"),
+                        new Enchantment.EnchantmentDefinition(
+                                items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
+                                Optional.empty(),
+                                3,
+                                3,
+                                Enchantment.dynamicCost(10, 10),
+                                Enchantment.dynamicCost(25, 10),
+                                4,
+                                List.of(EquipmentSlotGroup.HEAD)
+                        ),
+                        enchantments.getOrThrow(ModTags.Enchantments.HELMETS_EXCLUSIVE),
+                        DataComponentMap.builder()
+                                .set(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get(),
+                                        List.of(
+                                                new ScaleEnchantmentEffect(PEHKUI_BASE, LevelBasedValue.perLevel(1.5F, 0.25F)),
+                                                new ScaleEnchantmentEffect(PEHKUI_MOTION, LevelBasedValue.lookup(List.of(0.625F, 0.5F, 0.45F), LevelBasedValue.perLevel(0.6F, -0.1F))),
+                                                new ScaleEnchantmentEffect(PEHKUI_ATTACK, LevelBasedValue.lookup(List.of(1.1F, 1.25F, 1.5F), LevelBasedValue.perLevel(1.0F, 0.25F))),
+                                                new ScaleEnchantmentEffect(PEHKUI_ATTACK_SPEED, LevelBasedValue.perLevel(0.7F, -0.1F))
+                                        )
+                                )
+                                .build()
+                )
         );
 
-        // SMALL enchantment - decreases base scale (for helmets)
-        // base: 0.65, perLevel: -0.15 → levels: 0.5x, 0.35x, 0.2x
-        register(context, SMALL, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
-                        3,  // weight
-                        3,  // max level
-                        Enchantment.dynamicCost(10, 10),
-                        Enchantment.dynamicCost(25, 10),
-                        4,  // anvil cost
-                        EquipmentSlotGroup.HEAD))
-                .exclusiveWith(enchantments.getOrThrow(ModTags.Enchantments.HELMETS_EXCLUSIVE))
-                .withEffect(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get(),
-                        new ScaleEnchantmentEffect(PEHKUI_BASE, 0.65F, -0.15F))
+        context.register(
+                SMALL,
+                new Enchantment(
+                        Component.translatable("enchantment.khuacraft.small"),
+                        new Enchantment.EnchantmentDefinition(
+                                items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
+                                Optional.empty(),
+                                3,
+                                3,
+                                Enchantment.dynamicCost(10, 10),
+                                Enchantment.dynamicCost(25, 10),
+                                4,
+                                List.of(EquipmentSlotGroup.HEAD)
+                        ),
+                        enchantments.getOrThrow(ModTags.Enchantments.HELMETS_EXCLUSIVE),
+                        DataComponentMap.builder()
+                                .set(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get(),
+                                        List.of(
+                                                new ScaleEnchantmentEffect(PEHKUI_BASE, LevelBasedValue.lookup(List.of(0.5F, 0.35F, 0.2F), LevelBasedValue.perLevel(0.6F, -0.2F))),
+                                                new ScaleEnchantmentEffect(PEHKUI_MOTION, LevelBasedValue.constant(1.0F)),
+                                                new ScaleEnchantmentEffect(PEHKUI_ATTACK, LevelBasedValue.perLevel(0.8F, -0.1F)),
+                                                new ScaleEnchantmentEffect(PEHKUI_ATTACK_SPEED, LevelBasedValue.perLevel(1.0F, 0.1F))
+                                        )
+                                )
+                                .build()
+                )
         );
 
-        // FAT enchantment - increases width scale (for chestplates)
-        // base: 1.25, perLevel: 0.25 → levels: 1.5x, 1.75x, 2.0x
-        register(context, FAT, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
-                        3,  // weight
-                        3,  // max level
-                        Enchantment.dynamicCost(10, 10),
-                        Enchantment.dynamicCost(25, 10),
-                        4,  // anvil cost
-                        EquipmentSlotGroup.CHEST))
-                .withEffect(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get(),
-                        new ScaleEnchantmentEffect(PEHKUI_WIDTH, 1.25F, 0.25F))
+        context.register(
+                FAT,
+                new Enchantment(
+                        Component.translatable("enchantment.khuacraft.fat"),
+                        new Enchantment.EnchantmentDefinition(
+                                items.getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
+                                Optional.empty(),
+                                3,
+                                3,
+                                Enchantment.dynamicCost(10, 10),
+                                Enchantment.dynamicCost(25, 10),
+                                4,
+                                List.of(EquipmentSlotGroup.CHEST)
+                        ),
+                        HolderSet.empty(),
+                        DataComponentMap.builder()
+                                .set(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get(),
+                                        List.of(
+                                                new ScaleEnchantmentEffect(PEHKUI_WIDTH, LevelBasedValue.perLevel(1.5F, 0.25F)),
+                                                new ScaleEnchantmentEffect(PEHKUI_MOTION, LevelBasedValue.lookup(List.of(0.8F, 0.6F, 0.5F), LevelBasedValue.perLevel(0.8F, -0.2F)))
+                                        )
+                                )
+                                .build()
+                )
         );
 
-        // THIN enchantment - decreases width scale (for chestplates)
-        // base: 0.65, perLevel: -0.15 → levels: 0.5x, 0.35x, 0.2x
-        register(context, THIN, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
-                        3,  // weight
-                        3,  // max level
-                        Enchantment.dynamicCost(10, 10),
-                        Enchantment.dynamicCost(25, 10),
-                        4,  // anvil cost
-                        EquipmentSlotGroup.CHEST))
-                .withEffect(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get(),
-                        new ScaleEnchantmentEffect(PEHKUI_WIDTH, 0.65F, -0.15F))
+        context.register(
+                THIN,
+                new Enchantment(
+                        Component.translatable("enchantment.khuacraft.thin"),
+                        new Enchantment.EnchantmentDefinition(
+                                items.getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
+                                Optional.empty(),
+                                3,
+                                3,
+                                Enchantment.dynamicCost(10, 10),
+                                Enchantment.dynamicCost(25, 10),
+                                4,
+                                List.of(EquipmentSlotGroup.CHEST)
+                        ),
+                        HolderSet.empty(),
+                        DataComponentMap.builder()
+                                .set(ModEnchantmentEffectComponents.EQUIPMENT_SCALE.get(),
+                                        List.of(
+                                                new ScaleEnchantmentEffect(PEHKUI_WIDTH, LevelBasedValue.perLevel(0.7F, -0.1F)),
+                                                new ScaleEnchantmentEffect(PEHKUI_MOTION, LevelBasedValue.lookup(List.of(1.0F, 1.0F, 1.1F), LevelBasedValue.perLevel(1.0F, +0.05F)))
+                                        )
+                                )
+                                .build()
+                )
         );
-
 
         register(context, ModEnchantments.SWAPPINESS, Enchantment.enchantment(Enchantment.definition(
                         items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
@@ -194,7 +250,7 @@ public class ModEnchantments {
                         new InnerConscienceEnchantmentEffect(),
                         LootItemRandomChanceCondition.randomChance(
                                 EnchantmentLevelProvider.forEnchantmentLevel(
-                                        LevelBasedValue.perLevel(0.01F)
+                                        LevelBasedValue.perLevel(0.001F)
                                 )
                         )
                 )
@@ -212,7 +268,7 @@ public class ModEnchantments {
                 .withEffect(
                         EnchantmentEffectComponents.TICK,
                         new UnoReverseEnchantmentEffect(),
-                        LootItemRandomChanceCondition.randomChance(EnchantmentLevelProvider.forEnchantmentLevel(LevelBasedValue.perLevel(0.001F)))
+                        LootItemRandomChanceCondition.randomChance(EnchantmentLevelProvider.forEnchantmentLevel(LevelBasedValue.perLevel(0.1F)))
                 )
         );
 
