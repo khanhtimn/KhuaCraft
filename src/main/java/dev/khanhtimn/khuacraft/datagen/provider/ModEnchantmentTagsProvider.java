@@ -2,7 +2,7 @@ package dev.khanhtimn.khuacraft.datagen.provider;
 
 import dev.khanhtimn.khuacraft.KhuaCraft;
 import dev.khanhtimn.khuacraft.enchantment.ModEnchantments;
-import dev.khanhtimn.khuacraft.item.ModTags;
+import dev.khanhtimn.khuacraft.tag.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
@@ -21,6 +21,28 @@ public class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
+
+        this.tag(EnchantmentTags.TRADEABLE).add(
+                ModEnchantments.BIG,
+                ModEnchantments.SMALL,
+                ModEnchantments.FAT,
+                ModEnchantments.THIN,
+                ModEnchantments.SWAPPINESS,
+                ModEnchantments.COMBUSTION,
+                ModEnchantments.INNER_CONSCIENCE,
+                ModEnchantments.UNO_REVERSE
+        );
+
+        this.tag(EnchantmentTags.IN_ENCHANTING_TABLE).add(
+                ModEnchantments.BIG,
+                ModEnchantments.SMALL,
+                ModEnchantments.FAT,
+                ModEnchantments.THIN,
+                ModEnchantments.SWAPPINESS,
+                ModEnchantments.COMBUSTION,
+                ModEnchantments.INNER_CONSCIENCE,
+                ModEnchantments.UNO_REVERSE
+        );
 
         this.tag(EnchantmentTags.NON_TREASURE).add(ModEnchantments.UNO_REVERSE);
 
@@ -46,6 +68,16 @@ public class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
         );
 
         this.tag(EnchantmentTags.ON_MOB_SPAWN_EQUIPMENT).add(
+                ModEnchantments.BIG,
+                ModEnchantments.SMALL,
+                ModEnchantments.FAT,
+                ModEnchantments.THIN,
+                ModEnchantments.SWAPPINESS,
+                ModEnchantments.COMBUSTION,
+                ModEnchantments.UNO_REVERSE
+        );
+
+        this.tag(EnchantmentTags.ON_TRADED_EQUIPMENT).add(
                 ModEnchantments.BIG,
                 ModEnchantments.SMALL,
                 ModEnchantments.FAT,

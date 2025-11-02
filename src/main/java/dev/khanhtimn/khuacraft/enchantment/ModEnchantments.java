@@ -5,8 +5,8 @@ import dev.khanhtimn.khuacraft.enchantment.effect.InnerConscienceEnchantmentEffe
 import dev.khanhtimn.khuacraft.enchantment.effect.ScaleEnchantmentEffect;
 import dev.khanhtimn.khuacraft.enchantment.effect.SwappinessEnchantmentEffect;
 import dev.khanhtimn.khuacraft.enchantment.effect.UnoReverseEnchantmentEffect;
-import dev.khanhtimn.khuacraft.item.ModTags;
 import dev.khanhtimn.khuacraft.sound.ModSounds;
+import dev.khanhtimn.khuacraft.tag.ModTags;
 import net.minecraft.advancements.critereon.DamageSourcePredicate;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;

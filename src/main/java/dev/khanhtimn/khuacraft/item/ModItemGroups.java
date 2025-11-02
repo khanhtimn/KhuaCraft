@@ -1,6 +1,7 @@
 package dev.khanhtimn.khuacraft.item;
 
 import dev.khanhtimn.khuacraft.KhuaCraft;
+import dev.khanhtimn.khuacraft.potion.ModPotions;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -47,26 +48,26 @@ public class ModItemGroups {
 
                         entries.acceptAll(modEnchantedBooks);
 
-//                        List<ItemStack> modPotions = ModPotions.POTIONS.getEntries()
-//                                .stream()
-//                                .map(reg -> PotionContents.createItemStack(Items.POTION, reg.getDelegate()))
-//                                .toList();
-//
-//                        entries.acceptAll(modPotions);
-//
-//                        List<ItemStack> modSplashPotions = ModPotions.POTIONS.getEntries()
-//                                .stream()
-//                                .map(reg -> PotionContents.createItemStack(Items.SPLASH_POTION, reg.getDelegate()))
-//                                .toList();
-//
-//                        entries.acceptAll(modSplashPotions);
-//
-//                        List<ItemStack> modTippedArrows = ModPotions.POTIONS.getEntries()
-//                                .stream()
-//                                .map(reg -> PotionContents.createItemStack(Items.TIPPED_ARROW, reg.getDelegate()))
-//                                .toList();
-//
-//                        entries.acceptAll(modTippedArrows);
+                        List<ItemStack> modPotions = ModPotions.POTIONS.getEntries()
+                                .stream()
+                                .map(reg -> PotionContents.createItemStack(Items.POTION, reg.getDelegate()))
+                                .toList();
+
+                        entries.acceptAll(modPotions);
+
+                        List<ItemStack> modSplashPotions = ModPotions.POTIONS.getEntries()
+                                .stream()
+                                .map(reg -> PotionContents.createItemStack(Items.SPLASH_POTION, reg.getDelegate()))
+                                .toList();
+
+                        entries.acceptAll(modSplashPotions);
+
+                        List<ItemStack> modTippedArrows = ModPotions.POTIONS.getEntries()
+                                .stream()
+                                .map(reg -> PotionContents.createItemStack(Items.TIPPED_ARROW, reg.getDelegate()))
+                                .toList();
+
+                        entries.acceptAll(modTippedArrows);
 
 
                     })

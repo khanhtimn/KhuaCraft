@@ -10,9 +10,10 @@ import dev.khanhtimn.khuacraft.item.ModItemGroups;
 import dev.khanhtimn.khuacraft.item.ModItems;
 import dev.khanhtimn.khuacraft.network.ModPackets;
 import dev.khanhtimn.khuacraft.particle.ModParticles;
+import dev.khanhtimn.khuacraft.potion.ModEffects;
+import dev.khanhtimn.khuacraft.potion.ModPotions;
+import dev.khanhtimn.khuacraft.potion.effects.ScaleEffect;
 import dev.khanhtimn.khuacraft.sound.ModSounds;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -42,23 +43,20 @@ public class KhuaCraft {
         ModEnchantmentEffectComponents.ENCHANTMENT_EFFECT_COMPONENTS.register(modEventBus);
         ModEnchantmentEffects.ENTITY_ENCHANTMENT_EFFECTS.register(modEventBus);
 
+        ModEffects.MOB_EFFECTS.register(modEventBus);
+        ModPotions.POTIONS.register(modEventBus);
+
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-        // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-
-
-        if (Config.LOG_DIRT_BLOCK.getAsBoolean()) {
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-        }
-
-        LOGGER.info("{}{}", Config.MAGIC_NUMBER_INTRODUCTION.get(), Config.MAGIC_NUMBER.getAsInt());
-
-        Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
-
         // Enchantments
         NeoForge.EVENT_BUS.addListener(ScaleEnchantmentEffect.Listener::onEquipmentChange);
+
+        // Potion Effects - handle removal and expiration cleanup
+        NeoForge.EVENT_BUS.addListener(ScaleEffect::onMobEffectRemoved);
+        NeoForge.EVENT_BUS.addListener(ScaleEffect::onMobEffectExpired);
+        NeoForge.EVENT_BUS.addListener(ModPotions::registerBrewingRecipes);
+
     }
 }

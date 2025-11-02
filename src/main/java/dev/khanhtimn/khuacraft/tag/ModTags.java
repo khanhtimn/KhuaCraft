@@ -1,4 +1,4 @@
-package dev.khanhtimn.khuacraft.item;
+package dev.khanhtimn.khuacraft.tag;
 
 import dev.khanhtimn.khuacraft.KhuaCraft;
 import net.minecraft.core.registries.Registries;
