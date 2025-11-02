@@ -1,0 +1,32 @@
+{
+  "anvil_cost": 4,
+  "description": {
+    "translate": "enchantment.khuacraft.big"
+  },
+  "effects": {
+    "khuacraft:equipment_scale": [
+      {
+        "effect": {
+          "base_multiplier": 1.25,
+          "per_level_multiplier": 0.25,
+          "scale_type": "pehkui:base"
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#c:exclusive_set/helmets",
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "head"
+  ],
+  "supported_items": "#minecraft:enchantable/head_armor",
+  "weight": 3
+}

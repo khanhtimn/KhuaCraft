@@ -1,0 +1,31 @@
+{
+  "anvil_cost": 4,
+  "description": {
+    "translate": "enchantment.khuacraft.fat"
+  },
+  "effects": {
+    "khuacraft:equipment_scale": [
+      {
+        "effect": {
+          "base_multiplier": 1.25,
+          "per_level_multiplier": 0.25,
+          "scale_type": "pehkui:width"
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "chest"
+  ],
+  "supported_items": "#minecraft:enchantable/chest_armor",
+  "weight": 3
+}

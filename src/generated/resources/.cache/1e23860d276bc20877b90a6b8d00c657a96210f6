@@ -1,0 +1,6 @@
+// 1.21.1	2025-11-02T02:18:20.2509661	Tags for minecraft:enchantment mod id khuacraft
+35353c43b7f7a192cfd70b83889dd3f922177868 data/c/tags/enchantment/exclusive_set/helmets.json
+644cb35e6d4d753438e93ab70e6ad7d8866cc061 data/minecraft/tags/enchantment/curse.json
+da5ef50791b85c396800bbb372e73f6cda50f69c data/minecraft/tags/enchantment/on_mob_spawn_equipment.json
+da5ef50791b85c396800bbb372e73f6cda50f69c data/minecraft/tags/enchantment/on_random_loot.json
+35353c43b7f7a192cfd70b83889dd3f922177868 data/minecraft/tags/enchantment/treasure.json

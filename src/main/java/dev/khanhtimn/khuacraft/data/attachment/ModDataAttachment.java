@@ -12,12 +12,10 @@ public class ModDataAttachment {
     public static final DeferredRegister<AttachmentType<?>> DATA_ATTACHMENT_TYPES =
             DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, KhuaCraft.MODID);
 
-    public static final Supplier<AttachmentType<ScaleAttachment>> SCALES = DATA_ATTACHMENT_TYPES.register(
-            "scales",
-            () -> AttachmentType.builder(() -> new ScaleAttachment())
-                    .serialize(ScaleAttachment.CODEC.codec())
-                    .sync(new ScaleSyncHandler())
-                    .copyOnDeath()
+    public static final Supplier<AttachmentType<ScaleModifierAttachment>> SCALE_MODIFIERS = DATA_ATTACHMENT_TYPES.register(
+            "scale_modifiers",
+            () -> AttachmentType.builder(ScaleModifierAttachment::new)
+                    .serialize(ScaleModifierAttachment.CODEC.codec())
                     .build()
     );
 }

@@ -2,7 +2,7 @@ package dev.khanhtimn.khuacraft;
 
 import com.mojang.logging.LogUtils;
 import dev.khanhtimn.khuacraft.data.attachment.ModDataAttachment;
-import dev.khanhtimn.khuacraft.data.attachment.ScaleAttachmentEvents;
+import dev.khanhtimn.khuacraft.enchantment.ModEnchantmentEffectComponents;
 import dev.khanhtimn.khuacraft.item.ModItemGroups;
 import dev.khanhtimn.khuacraft.item.ModItems;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -26,6 +26,7 @@ public class KhuaCraft {
         ModItemGroups.CREATIVE_MODE_TABS.register(modEventBus);
 
         ModDataAttachment.DATA_ATTACHMENT_TYPES.register(modEventBus);
+        ModEnchantmentEffectComponents.ENCHANTMENT_EFFECT_COMPONENTS.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -34,8 +35,6 @@ public class KhuaCraft {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
 
-        // Register Pehkui scale change callbacks → mirror into our attachment
-        ScaleAttachmentEvents.registerScaleCallbacks();
 
         if (Config.LOG_DIRT_BLOCK.getAsBoolean()) {
             LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
