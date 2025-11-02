@@ -1,4 +1,4 @@
-package dev.khanhtimn.khuacraft.datagen;
+package dev.khanhtimn.khuacraft.datagen.provider;
 
 import dev.khanhtimn.khuacraft.KhuaCraft;
 import dev.khanhtimn.khuacraft.item.ModTags;

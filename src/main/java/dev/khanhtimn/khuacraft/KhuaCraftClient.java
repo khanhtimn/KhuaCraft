@@ -1,12 +1,14 @@
 package dev.khanhtimn.khuacraft;
 
-import net.minecraft.client.Minecraft;
+import dev.khanhtimn.khuacraft.particle.ModParticles;
+import dev.khanhtimn.khuacraft.particle.particles.UnoReverseParticle;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -20,6 +22,11 @@ public class KhuaCraftClient {
         // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
         // Do not forget to add translations for your config options to the en_us.json file.
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+    }
+
+    @SubscribeEvent
+    public static void registerParticle(final RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(ModParticles.UNO_REVERSE_PARTICLE.get(), UnoReverseParticle.Provider::new);
     }
 
     @SubscribeEvent

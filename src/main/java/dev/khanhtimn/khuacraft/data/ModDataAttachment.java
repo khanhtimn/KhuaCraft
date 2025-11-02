@@ -1,6 +1,7 @@
-package dev.khanhtimn.khuacraft.data.attachment;
+package dev.khanhtimn.khuacraft.data;
 
 import dev.khanhtimn.khuacraft.KhuaCraft;
+import dev.khanhtimn.khuacraft.data.attachment.ScaleModifierAttachment;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;

@@ -1,11 +1,12 @@
 package dev.khanhtimn.khuacraft.datagen;
 
-import dev.khanhtimn.khuacraft.KhuaCraft;
+import dev.khanhtimn.khuacraft.datagen.provider.ModBlockTagProvider;
+import dev.khanhtimn.khuacraft.datagen.provider.ModDatapackProvider;
+import dev.khanhtimn.khuacraft.datagen.provider.ModEnchantmentTagsProvider;
+import dev.khanhtimn.khuacraft.datagen.provider.ModItemTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -13,10 +14,8 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = KhuaCraft.MODID)
 public class ModDataGeneration {
 
-    @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();

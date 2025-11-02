@@ -1,4 +1,4 @@
-package dev.khanhtimn.khuacraft.datagen;
+package dev.khanhtimn.khuacraft.datagen.provider;
 
 import dev.khanhtimn.khuacraft.KhuaCraft;
 import dev.khanhtimn.khuacraft.enchantment.ModEnchantments;
@@ -22,37 +22,37 @@ public class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
 
-//        this.tag(EnchantmentTags.NON_TREASURE).add(ModEnchantments.UNO_REVERSE);
+        this.tag(EnchantmentTags.NON_TREASURE).add(ModEnchantments.UNO_REVERSE);
 
         this.tag(EnchantmentTags.TREASURE).add(ModEnchantments.BIG, ModEnchantments.SMALL);
 
         this.tag(EnchantmentTags.CURSE).add(
                 ModEnchantments.FAT,
-                ModEnchantments.THIN
-//                ModEnchantments.SWAPPINESS_CURSE,
-//                ModEnchantments.COMBUSTION_CURSE,
-//                ModEnchantments.INNER_CONSCIENCE_CURSE
+                ModEnchantments.THIN,
+                ModEnchantments.SWAPPINESS,
+                ModEnchantments.COMBUSTION,
+                ModEnchantments.INNER_CONSCIENCE
         );
 
         this.tag(EnchantmentTags.ON_RANDOM_LOOT).add(
                 ModEnchantments.BIG,
                 ModEnchantments.SMALL,
                 ModEnchantments.FAT,
-                ModEnchantments.THIN
-//                ModEnchantments.UNO_REVERSE,
-//                ModEnchantments.SWAPPINESS_CURSE,
-//                ModEnchantments.COMBUSTION_CURSE,
-//                ModEnchantments.INNER_CONSCIENCE_CURSE
+                ModEnchantments.THIN,
+                ModEnchantments.SWAPPINESS,
+                ModEnchantments.COMBUSTION,
+                ModEnchantments.INNER_CONSCIENCE,
+                ModEnchantments.UNO_REVERSE
         );
 
         this.tag(EnchantmentTags.ON_MOB_SPAWN_EQUIPMENT).add(
                 ModEnchantments.BIG,
                 ModEnchantments.SMALL,
                 ModEnchantments.FAT,
-                ModEnchantments.THIN
-//                ModEnchantments.UNO_REVERSE,
-//                ModEnchantments.SWAPPINESS_CURSE,
-//                ModEnchantments.COMBUSTION_CURSE
+                ModEnchantments.THIN,
+                ModEnchantments.SWAPPINESS,
+                ModEnchantments.COMBUSTION,
+                ModEnchantments.UNO_REVERSE
         );
 
         this.tag(ModTags.Enchantments.HELMETS_EXCLUSIVE).add(

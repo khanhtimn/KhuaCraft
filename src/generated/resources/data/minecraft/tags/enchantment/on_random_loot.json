@@ -3,6 +3,10 @@
     "khuacraft:big",
     "khuacraft:small",
     "khuacraft:fat",
-    "khuacraft:thin"
+    "khuacraft:thin",
+    "khuacraft:swappiness",
+    "khuacraft:combustion",
+    "khuacraft:inner_conscience",
+    "khuacraft:uno_reverse"
   ]
 }
