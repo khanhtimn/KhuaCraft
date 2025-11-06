@@ -5,6 +5,7 @@ import dev.khanhtimn.khuacraft.data.ModDataAttachment;
 import dev.khanhtimn.khuacraft.datagen.ModDataGeneration;
 import dev.khanhtimn.khuacraft.enchantment.ModEnchantmentEffectComponents;
 import dev.khanhtimn.khuacraft.enchantment.ModEnchantmentEffects;
+import dev.khanhtimn.khuacraft.loot.ModLootModifiers;
 import dev.khanhtimn.khuacraft.enchantment.effect.ScaleEnchantmentEffect;
 import dev.khanhtimn.khuacraft.item.ModItemGroups;
 import dev.khanhtimn.khuacraft.item.ModItems;
@@ -42,6 +43,7 @@ public class KhuaCraft {
         ModDataAttachment.DATA_ATTACHMENT_TYPES.register(modEventBus);
         ModEnchantmentEffectComponents.ENCHANTMENT_EFFECT_COMPONENTS.register(modEventBus);
         ModEnchantmentEffects.ENTITY_ENCHANTMENT_EFFECTS.register(modEventBus);
+        ModLootModifiers.GLOBAL_LOOT_MODIFIERS.register(modEventBus);
 
         ModEffects.MOB_EFFECTS.register(modEventBus);
         ModPotions.POTIONS.register(modEventBus);

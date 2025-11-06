@@ -3,6 +3,7 @@ package dev.khanhtimn.khuacraft.datagen;
 import dev.khanhtimn.khuacraft.datagen.provider.ModBlockTagProvider;
 import dev.khanhtimn.khuacraft.datagen.provider.ModDatapackProvider;
 import dev.khanhtimn.khuacraft.datagen.provider.ModEnchantmentTagsProvider;
+import dev.khanhtimn.khuacraft.datagen.provider.ModGlobalLootModifierProvider;
 import dev.khanhtimn.khuacraft.datagen.provider.ModItemTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -30,6 +31,7 @@ public class ModDataGeneration {
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagProvider(output, modLookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(output, modLookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(output, modLookupProvider));
     }
 }
 

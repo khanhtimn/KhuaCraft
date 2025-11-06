@@ -1,0 +1,15 @@
+{
+  "type": "khuacraft:randomness",
+  "chance": {
+    "type": "minecraft:uniform",
+    "max": 0.05,
+    "min": 0.01
+  },
+  "conditions": [],
+  "excluded_items": [
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:barrier",
+    "minecraft:structure_void"
+  ]
+}

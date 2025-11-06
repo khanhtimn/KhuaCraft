@@ -1,10 +1,7 @@
 package dev.khanhtimn.khuacraft.enchantment;
 
 import dev.khanhtimn.khuacraft.KhuaCraft;
-import dev.khanhtimn.khuacraft.enchantment.effect.InnerConscienceEnchantmentEffect;
-import dev.khanhtimn.khuacraft.enchantment.effect.ScaleEnchantmentEffect;
-import dev.khanhtimn.khuacraft.enchantment.effect.SwappinessEnchantmentEffect;
-import dev.khanhtimn.khuacraft.enchantment.effect.UnoReverseEnchantmentEffect;
+import dev.khanhtimn.khuacraft.enchantment.effect.*;
 import dev.khanhtimn.khuacraft.sound.ModSounds;
 import dev.khanhtimn.khuacraft.tag.ModTags;
 import net.minecraft.advancements.critereon.DamageSourcePredicate;
@@ -60,6 +57,8 @@ public class ModEnchantments {
             ResourceLocation.fromNamespaceAndPath(KhuaCraft.MODID, "inner_conscience"));
     public static final ResourceKey<Enchantment> UNO_REVERSE = ResourceKey.create(Registries.ENCHANTMENT,
             ResourceLocation.fromNamespaceAndPath(KhuaCraft.MODID, "uno_reverse"));
+    public static final ResourceKey<Enchantment> RANDOMNESS = ResourceKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(KhuaCraft.MODID, "randomness"));
 
     private static final ResourceLocation PEHKUI_BASE = ResourceLocation.fromNamespaceAndPath("pehkui", "base");
     private static final ResourceLocation PEHKUI_WIDTH = ResourceLocation.fromNamespaceAndPath("pehkui", "width");
@@ -270,6 +269,17 @@ public class ModEnchantments {
                         new UnoReverseEnchantmentEffect(),
                         LootItemRandomChanceCondition.randomChance(EnchantmentLevelProvider.forEnchantmentLevel(LevelBasedValue.perLevel(0.1F)))
                 )
+        );
+
+        register(context, ModEnchantments.RANDOMNESS, Enchantment.enchantment(Enchantment.definition(
+                        items.getOrThrow(ItemTags.MINING_ENCHANTABLE),
+                        items.getOrThrow(ItemTags.PICKAXES),
+                        4,
+                        5,
+                        Enchantment.dynamicCost(10, 10),
+                        Enchantment.dynamicCost(25, 10),
+                        2,
+                        EquipmentSlotGroup.MAINHAND))
         );
 
     }

@@ -30,7 +30,8 @@ public class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
                 ModEnchantments.SWAPPINESS,
                 ModEnchantments.COMBUSTION,
                 ModEnchantments.INNER_CONSCIENCE,
-                ModEnchantments.UNO_REVERSE
+                ModEnchantments.UNO_REVERSE,
+                ModEnchantments.RANDOMNESS
         );
 
         this.tag(EnchantmentTags.IN_ENCHANTING_TABLE).add(
@@ -46,14 +47,15 @@ public class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
         this.tag(EnchantmentTags.NON_TREASURE).add(ModEnchantments.UNO_REVERSE);
 
-        this.tag(EnchantmentTags.TREASURE).add(ModEnchantments.BIG, ModEnchantments.SMALL);
+        this.tag(EnchantmentTags.TREASURE).add(ModEnchantments.BIG, ModEnchantments.SMALL, ModEnchantments.RANDOMNESS);
 
         this.tag(EnchantmentTags.CURSE).add(
                 ModEnchantments.FAT,
                 ModEnchantments.THIN,
                 ModEnchantments.SWAPPINESS,
                 ModEnchantments.COMBUSTION,
-                ModEnchantments.INNER_CONSCIENCE
+                ModEnchantments.INNER_CONSCIENCE,
+                ModEnchantments.RANDOMNESS
         );
 
         this.tag(EnchantmentTags.ON_RANDOM_LOOT).add(
@@ -64,7 +66,8 @@ public class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
                 ModEnchantments.SWAPPINESS,
                 ModEnchantments.COMBUSTION,
                 ModEnchantments.INNER_CONSCIENCE,
-                ModEnchantments.UNO_REVERSE
+                ModEnchantments.UNO_REVERSE,
+                ModEnchantments.RANDOMNESS
         );
 
         this.tag(EnchantmentTags.ON_MOB_SPAWN_EQUIPMENT).add(
@@ -84,7 +87,8 @@ public class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
                 ModEnchantments.THIN,
                 ModEnchantments.SWAPPINESS,
                 ModEnchantments.COMBUSTION,
-                ModEnchantments.UNO_REVERSE
+                ModEnchantments.UNO_REVERSE,
+                ModEnchantments.RANDOMNESS
         );
 
         this.tag(ModTags.Enchantments.HELMETS_EXCLUSIVE).add(
